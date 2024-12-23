@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
+using System.Threading;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -7,10 +9,17 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject HighWall;
     [SerializeField] GameObject ShortWall;
     [SerializeField] GameObject WallWithExit;
-    [SerializeField] List<GameObject> Walls;
+    [SerializeField] float timer = 2;
+    [SerializeField] List<GameObject> Walls = new List<GameObject>();
     private void Update()
     {
-        
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            timer = 2;
+            Debug.Log("SpawnBlock");
+            ChoosingSpawn();
+        }
     }
 
     private void ChoosingSpawn()
@@ -18,20 +27,31 @@ public class Spawner : MonoBehaviour
         int randomNumber = Random.Range(0, 4);
         if (randomNumber == 1)
         {
-            Instantiate(HighWall);
-            
+            if (Walls.Contains(HighWall))
+            {
+                return;
+            }
+            Instantiate(HighWall, gameObject.transform.position, gameObject.transform.rotation);
+            Walls.Add(HighWall);
         }
         if (randomNumber == 2)
         {
-            Instantiate(ShortWall);
+            if (Walls.Contains(ShortWall))
+            {
+                return;
+            }
+            Instantiate(ShortWall,gameObject.transform.position, gameObject.transform.rotation);
+            Walls.Add(ShortWall);
         }
         if (randomNumber == 3)
         {
-            Instantiate(WallWithExit);
+            if (Walls.Contains(WallWithExit))
+            {
+                return;
+            }
+            Instantiate(WallWithExit,gameObject.transform.position, gameObject.transform.rotation);
+            Walls.Add(WallWithExit);
         }
-        if (randomNumber == 4)
-        {
-            
-        }
+        Walls.Clear();
     }
 }

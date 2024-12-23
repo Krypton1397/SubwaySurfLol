@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbc9f34b1a80d34c899f936970b9d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 150
 --- !u!54 &4187791831959544499
 Rigidbody:
   m_ObjectHideFlags: 0

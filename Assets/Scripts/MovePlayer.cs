@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
-    [SerializeField] int jumpForce = 175;
+    [SerializeField] int jumpForce = 150;
     private float positionX = -15.79f;
     private float positionY = 2.9778f;
     private float positionZ = -1.3067f;
