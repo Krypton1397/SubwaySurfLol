@@ -331,6 +331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 430029314}
+  - component: {fileID: 430029315}
   m_Layer: 0
   m_Name: SpawnerMiddle
   m_TagString: Untagged
@@ -346,13 +347,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430029313}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.44, y: 3.525, z: -1.2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.4399996, y: 3.525, z: -1.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &430029315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430029313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad01cdce17443d54b9512125d5806ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HighWall: {fileID: 7795827322816730502, guid: 9397abab66d8ffa4aaba1f5ad66446b1, type: 3}
+  ShortWall: {fileID: 5870756757189021252, guid: 35cda7acdee7ae54699febbe3ff9b2d4, type: 3}
+  WallWithExit: {fileID: 709122333108021196, guid: 39a22f1440d13724b89d3a042400a562, type: 3}
+  timer: 2
+  Walls: []
 --- !u!1 &679674331
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 679674332}
+  - component: {fileID: 679674333}
   m_Layer: 0
   m_Name: SpawnerRight
   m_TagString: Untagged
@@ -377,13 +396,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679674331}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.44, y: 3.525, z: -4.14}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.4399996, y: 3.595, z: -3.936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &679674333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679674331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad01cdce17443d54b9512125d5806ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HighWall: {fileID: 7795827322816730502, guid: 9397abab66d8ffa4aaba1f5ad66446b1, type: 3}
+  ShortWall: {fileID: 5870756757189021252, guid: 35cda7acdee7ae54699febbe3ff9b2d4, type: 3}
+  WallWithExit: {fileID: 709122333108021196, guid: 39a22f1440d13724b89d3a042400a562, type: 3}
+  timer: 2
+  Walls: []
 --- !u!1 &950706586
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2103401275}
+  - component: {fileID: 2103401276}
   m_Layer: 0
   m_Name: SpawnerLeft
   m_TagString: Untagged
@@ -500,13 +537,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103401274}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.44, y: 3.525, z: 1.61}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.4399996, y: 3.525, z: 1.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2103401276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103401274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad01cdce17443d54b9512125d5806ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HighWall: {fileID: 7795827322816730502, guid: 9397abab66d8ffa4aaba1f5ad66446b1, type: 3}
+  ShortWall: {fileID: 5870756757189021252, guid: 35cda7acdee7ae54699febbe3ff9b2d4, type: 3}
+  WallWithExit: {fileID: 709122333108021196, guid: 39a22f1440d13724b89d3a042400a562, type: 3}
+  timer: 2
+  Walls: []
 --- !u!1001 &390484605954704805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -581,5 +635,5 @@ SceneRoots:
   - {fileID: 48350797}
   - {fileID: 390484605954704805}
   - {fileID: 430029314}
-  - {fileID: 2103401275}
   - {fileID: 679674332}
+  - {fileID: 2103401275}
