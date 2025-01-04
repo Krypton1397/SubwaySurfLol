@@ -21,14 +21,14 @@ public class Spawner : MonoBehaviour
         {
             timer = 2;
             Debug.Log("SpawnBlock");
-            ChoosingSpawnLeft();
-            ChoosingSpawnMiddle();
-            ChoosingSpawnRight();
+            ChoosingSpawn(SpawnerMiddle);
+            ChoosingSpawn(SpawnerLeft);
+            ChoosingSpawn(SpawnerRight);
             Walls.Clear();
         }
     }
 
-    private void ChoosingSpawnRight()
+    private void ChoosingSpawn(Transform spawnPosition)
     {
         int randomNumber = Random.Range(0, 4);
         if (randomNumber == 1)
@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour
             {
                 return;
             }
-            Instantiate(HighWall,SpawnerRight);
+            Instantiate(HighWall,spawnPosition);
             Walls.Add(HighWall);
         }
         if (randomNumber == 2)
@@ -46,7 +46,7 @@ public class Spawner : MonoBehaviour
             {
                 return;
             }
-            Instantiate(ShortWall,SpawnerRight);
+            Instantiate(ShortWall,spawnPosition);
             Walls.Add(ShortWall);
         }
         if (randomNumber == 3)
@@ -55,69 +55,7 @@ public class Spawner : MonoBehaviour
             {
                 return;
             }
-            Instantiate(WallWithExit,SpawnerRight);
-            Walls.Add(WallWithExit);
-        }
-    }
-    private void ChoosingSpawnMiddle()
-    {
-        int randomNumber = Random.Range(0, 4);
-        if (randomNumber == 1)
-        {
-            if (Walls.Contains(HighWall))
-            {
-                return;
-            }
-            Instantiate(HighWall,SpawnerMiddle);
-            Walls.Add(HighWall);
-        }
-        if (randomNumber == 2)
-        {
-            if (Walls.Contains(ShortWall))
-            {
-                return;
-            }
-            Instantiate(ShortWall,SpawnerMiddle);
-            Walls.Add(ShortWall);
-        }
-        if (randomNumber == 3)
-        {
-            if (Walls.Contains(WallWithExit))
-            {
-                return;
-            }
-            Instantiate(WallWithExit,SpawnerMiddle);
-            Walls.Add(WallWithExit);
-        }
-    }
-    private void ChoosingSpawnLeft()
-    {
-        int randomNumber = Random.Range(0, 4);
-        if (randomNumber == 1)
-        {
-            if (Walls.Contains(HighWall))
-            {
-                return;
-            }
-            Instantiate(HighWall,SpawnerLeft);
-            Walls.Add(HighWall);
-        }
-        if (randomNumber == 2)
-        {
-            if (Walls.Contains(ShortWall))
-            {
-                return;
-            }
-            Instantiate(ShortWall,SpawnerLeft);
-            Walls.Add(ShortWall);
-        }
-        if (randomNumber == 3)
-        {
-            if (Walls.Contains(WallWithExit))
-            {
-                return;
-            }
-            Instantiate(WallWithExit,SpawnerLeft);
+            Instantiate(WallWithExit,spawnPosition);
             Walls.Add(WallWithExit);
         }
     }
