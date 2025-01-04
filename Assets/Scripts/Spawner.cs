@@ -11,6 +11,9 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject WallWithExit;
     [SerializeField] float timer = 2;
     [SerializeField] List<GameObject> Walls = new List<GameObject>();
+    [SerializeField] Transform SpawnerRight;
+    [SerializeField] Transform SpawnerLeft;
+    [SerializeField] Transform SpawnerMiddle;
     private void Update()
     {
         timer -= Time.deltaTime;
@@ -18,11 +21,14 @@ public class Spawner : MonoBehaviour
         {
             timer = 2;
             Debug.Log("SpawnBlock");
-            ChoosingSpawn();
+            ChoosingSpawnLeft();
+            ChoosingSpawnMiddle();
+            ChoosingSpawnRight();
+            Walls.Clear();
         }
     }
 
-    private void ChoosingSpawn()
+    private void ChoosingSpawnRight()
     {
         int randomNumber = Random.Range(0, 4);
         if (randomNumber == 1)
@@ -31,7 +37,7 @@ public class Spawner : MonoBehaviour
             {
                 return;
             }
-            Instantiate(HighWall, gameObject.transform.position, gameObject.transform.rotation);
+            Instantiate(HighWall,SpawnerRight);
             Walls.Add(HighWall);
         }
         if (randomNumber == 2)
@@ -40,7 +46,7 @@ public class Spawner : MonoBehaviour
             {
                 return;
             }
-            Instantiate(ShortWall,gameObject.transform.position, gameObject.transform.rotation);
+            Instantiate(ShortWall,SpawnerRight);
             Walls.Add(ShortWall);
         }
         if (randomNumber == 3)
@@ -49,9 +55,70 @@ public class Spawner : MonoBehaviour
             {
                 return;
             }
-            Instantiate(WallWithExit,gameObject.transform.position, gameObject.transform.rotation);
+            Instantiate(WallWithExit,SpawnerRight);
             Walls.Add(WallWithExit);
         }
-        Walls.Clear();
+    }
+    private void ChoosingSpawnMiddle()
+    {
+        int randomNumber = Random.Range(0, 4);
+        if (randomNumber == 1)
+        {
+            if (Walls.Contains(HighWall))
+            {
+                return;
+            }
+            Instantiate(HighWall,SpawnerMiddle);
+            Walls.Add(HighWall);
+        }
+        if (randomNumber == 2)
+        {
+            if (Walls.Contains(ShortWall))
+            {
+                return;
+            }
+            Instantiate(ShortWall,SpawnerMiddle);
+            Walls.Add(ShortWall);
+        }
+        if (randomNumber == 3)
+        {
+            if (Walls.Contains(WallWithExit))
+            {
+                return;
+            }
+            Instantiate(WallWithExit,SpawnerMiddle);
+            Walls.Add(WallWithExit);
+        }
+    }
+    private void ChoosingSpawnLeft()
+    {
+        int randomNumber = Random.Range(0, 4);
+        if (randomNumber == 1)
+        {
+            if (Walls.Contains(HighWall))
+            {
+                return;
+            }
+            Instantiate(HighWall,SpawnerLeft);
+            Walls.Add(HighWall);
+        }
+        if (randomNumber == 2)
+        {
+            if (Walls.Contains(ShortWall))
+            {
+                return;
+            }
+            Instantiate(ShortWall,SpawnerLeft);
+            Walls.Add(ShortWall);
+        }
+        if (randomNumber == 3)
+        {
+            if (Walls.Contains(WallWithExit))
+            {
+                return;
+            }
+            Instantiate(WallWithExit,SpawnerLeft);
+            Walls.Add(WallWithExit);
+        }
     }
 }
