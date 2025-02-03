@@ -1,32 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
+    [SerializeField] private PlayerScore player;
     private Text textScore;
     private int score;
-    private float timer = 2;
 
     private void Start()
     {
         textScore = GetComponent<Text>();
-        score -= 2;
     }
     private void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer < 0)
+        if (score != player.GetScore())
         {
-            timer = 2;
-            ChangeScore(1);
+            score = player.GetScore();
+            textScore.text = "Score: " + score.ToString();
         }
-    }
-
-    private void ChangeScore(int numberForChange)
-    {
-        score += numberForChange;
-        textScore.text = "Score : " + score.ToString();
     }
 }

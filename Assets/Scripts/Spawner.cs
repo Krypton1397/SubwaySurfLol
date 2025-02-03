@@ -11,8 +11,9 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject HighWall;
     [SerializeField] GameObject ShortWall;
     [SerializeField] GameObject WallWithExit;
+    [SerializeField] GameObject Coin;
     [SerializeField] float timer = 2;
-    [SerializeField] List<GameObject> Walls = new List<GameObject>();
+    [SerializeField] List<GameObject> WallsAndCoins = new List<GameObject>();
     [SerializeField] Transform SpawnerRight;
     [SerializeField] Transform SpawnerLeft;
     [SerializeField] Transform SpawnerMiddle;
@@ -26,39 +27,48 @@ public class Spawner : MonoBehaviour
             ChoosingSpawn(SpawnerMiddle);
             ChoosingSpawn(SpawnerLeft);
             ChoosingSpawn(SpawnerRight);
-            Walls.Clear();
+            WallsAndCoins.Clear();
         }
     }
 
     private void ChoosingSpawn(Transform spawnPosition)
     {
         int randomNumber = Random.Range(0, 4);
+        if (randomNumber == 0)
+        {
+            if (WallsAndCoins.Contains(Coin))
+            {
+                return;
+            }
+            Instantiate(Coin, spawnPosition);
+            WallsAndCoins.Add(Coin);
+        }
         if (randomNumber == 1)
         {
-            if (Walls.Contains(HighWall))
+            if (WallsAndCoins.Contains(HighWall))
             {
                 return;
             }
             Instantiate(HighWall,spawnPosition);
-            Walls.Add(HighWall);
+            WallsAndCoins.Add(HighWall);
         }
         if (randomNumber == 2)
         {
-            if (Walls.Contains(ShortWall))
+            if (WallsAndCoins.Contains(ShortWall))
             {
                 return;
             }
             Instantiate(ShortWall,spawnPosition);
-            Walls.Add(ShortWall);
+            WallsAndCoins.Add(ShortWall);
         }
         if (randomNumber == 3)
         {
-            if (Walls.Contains(WallWithExit))
+            if (WallsAndCoins.Contains(WallWithExit))
             {
                 return;
             }
             Instantiate(WallWithExit,spawnPosition);
-            Walls.Add(WallWithExit);
+            WallsAndCoins.Add(WallWithExit);
         }
     }
 }
